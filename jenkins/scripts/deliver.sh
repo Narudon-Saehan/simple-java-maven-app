@@ -12,8 +12,8 @@ echo 'The following command extracts the value of the <name/> element'
 echo 'within <project/> of your Java/Maven project''s "pom.xml" file.'
 set -x
 NAME=`mvn -q -DforceStdout help:evaluate -Dexpression=project.name`
-NAME=${NAME//' [0m'/''}
-echo $NAME | sed 's/ [0m//'
+NAME=$(echo ${NAME} | cut -d ' ' -f 1)
+echo $NAME
 set +x
 
 echo 'The following command behaves similarly to the previous one but'
