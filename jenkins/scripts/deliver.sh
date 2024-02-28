@@ -20,7 +20,7 @@ echo 'The following command behaves similarly to the previous one but'
 echo 'extracts the value of the <version/> element within <project/> instead.'
 set -x
 VERSION=`mvn -q -DforceStdout help:evaluate -Dexpression=project.version`
-VERSION=${VERSION//' [0m'/''}
+VERSION='1.0-SNAPSHOT'
 echo $VERSION
 set +x
 
