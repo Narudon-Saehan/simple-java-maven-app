@@ -12,7 +12,7 @@ echo 'The following command extracts the value of the <name/> element'
 echo 'within <project/> of your Java/Maven project''s "pom.xml" file.'
 set -x
 NAME=`mvn -q -DforceStdout help:evaluate -Dexpression=project.name`
-NAME=$(echo ${NAME} | cut -d ' ' -f 1)
+NAME='my-app'
 echo $NAME
 set +x
 
